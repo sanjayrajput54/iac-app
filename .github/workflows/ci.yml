@@ -16,7 +16,7 @@ jobs:
       run: npm install -g aws-cdk
     - name: Install Dependencies
       run: npm install 
-    - name: Build and Synthesize stack
+    # - name: Build and Synthesize stack
       # run: npm run build && cdk bootstrap
 
     # - name: Deploy CDK Synthisize stack
