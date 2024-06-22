@@ -1,0 +1,17 @@
+name: iacapp
+on:
+  push:
+  -master
+jobs: 
+  iac-app-jobs:
+    run-on: ubuntu-latest
+    steps:
+    - name: Pull the source code from repo
+      uses: actions/checkout@4
+    - name: CDK Synth
+      uses: scottbrenner/aws-cdk-action@v1.6.0
+      with:
+        args: synth
+      env: 
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
