@@ -2,7 +2,7 @@ name: iacapp
 on: [push]
 jobs: 
   iac-app-jobs:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Pull the source code from repo
       uses: actions/checkout@4
