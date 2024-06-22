@@ -17,7 +17,7 @@ jobs:
     - name: Install Dependencies
       run: npm install 
     - name: Build and Synthesize stack
-      run: npm run build && cdk bootstrap
+      # run: npm run build && cdk bootstrap
 
     # - name: Deploy CDK Synthisize stack
     #   uses: scottbrenner/aws-cdk-action@v1.6.0
