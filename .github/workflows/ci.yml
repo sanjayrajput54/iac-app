@@ -9,6 +9,10 @@ on:
 jobs: 
   iac-app-jobs:
     runs-on: ubuntu-latest
+    env: 
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ap-south-1
     steps:
     - name: Pull the source code from repo
       uses: actions/checkout@v4
@@ -24,10 +28,6 @@ jobs:
     #   uses: scottbrenner/aws-cdk-action@v1.6.0
     #   with:
     #     args: --require-approval never
-      env: 
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: ap-south-1
     - name: Print AWS Credentials
       run: |
         echo "Done!"
