@@ -18,11 +18,14 @@ jobs:
       run: npm install 
     - name: Build and Synthesize stack
       run: npm run build && cdk bootstrap
-
     - name: Deploy CDK Synthisize stack
-      uses: scottbrenner/aws-cdk-action@v1.6.0
-      with:
-        args: --require-approval never
+      run: cdk deploy --require-approval never
+      # with:
+      #   args: --require-approval never
+    # - name: Deploy CDK Synthisize stack
+    #   uses: scottbrenner/aws-cdk-action@v1.6.0
+    #   with:
+    #     args: --require-approval never
       env: 
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
