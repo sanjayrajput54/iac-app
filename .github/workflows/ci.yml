@@ -19,7 +19,7 @@ jobs:
     - name: Build and Synthesize stack
       run: npm run build && cdk bootstrap
     - name: Deploy stack
-      run: npx cdk deploy
+      run: npx cdk deploy --require-approval never
     # - name: Deploy CDK Synthisize stack
     #   uses: scottbrenner/aws-cdk-action@v1.6.0
     #   with:
