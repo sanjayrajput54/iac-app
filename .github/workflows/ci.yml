@@ -27,7 +27,7 @@ jobs:
     - name: Deploy CDK Synthisize stack
       uses: scottbrenner/aws-cdk-action@v1.6.0
       with:
-        args: --require-approval never
+        args: synth --require-approval never
     - name: Print AWS Credentials
       run: |
         echo "Done!"
